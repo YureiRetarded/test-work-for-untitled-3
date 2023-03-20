@@ -170,7 +170,7 @@ class Garden
 
 class Worker
 {
-    public Garden $garden;
+    private Garden $garden;
 
     function __construct(Garden $garden)
     {
@@ -191,7 +191,7 @@ class Worker
                     $harvestedFruits[] = $tree->getApple();
                 }
 
-            if ($tree instanceof PearTree)
+            else if ($tree instanceof PearTree)
                 for ($i = 0; $i < rand(0, 20); $i++) {
                     $harvestedFruits[] = $tree->getPear();
                 }
